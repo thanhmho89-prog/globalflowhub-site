@@ -1,24 +1,24 @@
-# GlobalFlowHub website analytics setup
+# GlobalFlowHub — Cloudflare Web Analytics
 
-## Status
-**Prepared but disabled.** The website's `index.html` contains a conditional loader for Cloudflare Web Analytics, but its `gfh-cf-analytics-token` meta field is empty. As shipped, it makes **no analytics request**. This document contains no account credentials.
+## Configuration status
+The official Cloudflare Web Analytics beacon for `globalflowhub.org` has been added to `index.html` on branch `add-privacy-friendly-analytics-setup`.
 
-## Activation (site owner)
-1. Visit https://dash.cloudflare.com/ and sign in or create a free account.
-2. In **Web Analytics**, add `globalflowhub.org` as a site and choose the manual JavaScript installation option (menu labels can vary).
-3. Cloudflare provides a beacon snippet with a **site token**. The site token is not a secret API key. Keep passwords, API keys, and session tokens out of the repository.
-4. Update the blank field in `index.html`:
-   `<meta name="gfh-cf-analytics-token" content="">`
-   Put only the site's 32-character hex token or UUID-formatted token between the quotes. Do **not** paste the whole Cloudflare script tag; the loader already inserts the beacon when configured.
-5. Merge/publish the website change, then visit the public site with tracking not blocked. Verify the beacon loads and check Cloudflare Web Analytics for page views and aggregate referrer/country data. The dashboard may take some time to populate.
-6. Keep the privacy notice visible. Review privacy obligations for any future analytics changes.
+**Not deployed until merged and published.** GitHub pull request #2 is the review gate. Cloudflare will begin collecting supported analytics after the updated site is published and people visit it.
 
-## Security and privacy
-- The conditional loader uses Cloudflare's official `https://static.cloudflareinsights.com/beacon.min.js` script. Loading it means browser visitors send analytics information to Cloudflare under its policies.
-- Cloudflare Web Analytics is intended to be cookie-free and does not require fingerprint-based identity tracking; it is still a third-party service.
-- Never record or publish individual visitors' identities; treat aggregate stats as directional indicators.
-- A new analytics installation **cannot report historical visits** made before collection began.
-- Analytics is separate from private GFH/LITHARA repositories, agent tools, runtime controls, and project evidence.
+The token embedded in the static script is a public *site analytics token*, not a Cloudflare account password or API credential.
+
+## After publishing
+1. Merge pull request #2 into `main` following normal review.
+2. Allow the website hosting pipeline to publish, then load https://globalflowhub.org/ in a browser with analytics blocking disabled.
+3. Inspect page source or developer tools to confirm a single script pointing to `https://static.cloudflareinsights.com/beacon.min.js` and a `data-cf-beacon` token.
+4. In Cloudflare **Web Analytics**, choose the `globalflowhub.org` site and verify new page views. Reporting may take time; zero initially does not prove failure.
+5. Keep the footer privacy notice; evaluate additional privacy and consent requirements if services or tracking practices change.
+
+## Privacy and boundaries
+- Cloudflare Web Analytics is a third-party, cookie-free analytics service and may collect aggregate traffic and performance data. Review Cloudflare's policy and documentation.
+- Avoid adding identification-level tracking, visitor profiling, or additional cookies unless independently justified and disclosed.
+- No past visit data can be recovered merely by enabling the beacon today.
+- Tracking is unrelated to private GFH/LITHARA repositories, authority grants, runtime control, or any other operational project system.
 
 ## Removal
-To fully disable tracking, clear the meta tag token. To remove the integration entirely, delete the conditional loader and the accompanying privacy statement.
+Delete the Cloudflare Web Analytics script block to disable the integration, then update the privacy notice accordingly.
