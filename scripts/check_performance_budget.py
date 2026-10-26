@@ -109,7 +109,7 @@ else:
     data = preview.read_bytes()
     if len(data) > SHARE_IMAGE_LIMIT:
         ERRORS.append(f"social-preview.png over {SHARE_IMAGE_LIMIT} B")
-    if len(data) < 24 or data[:8] != b"\\x89PNG\\r\\n\\x1a\\n":
+    if len(data) < 24 or data[:8] != b"\x89PNG\r\n\x1a\n":
         ERRORS.append("Invalid PNG header")
     else:
         width, height = struct.unpack(">II", data[16:24])
