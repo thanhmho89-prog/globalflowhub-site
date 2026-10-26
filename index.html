@@ -4,6 +4,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>GlobalFlowHub | Evidence-led software development</title>
+  <!-- Cloudflare Web Analytics is disabled until its public *site token* is set; see ANALYTICS_SETUP.md. -->
+  <meta name="gfh-cf-analytics-token" content="">
   <meta
     name="description"
     content="GlobalFlowHub is an independent software project exploring evidence-led decision workflows, policy-aware routing, traceability, and human oversight."
@@ -682,6 +684,23 @@
       </div>
       <div>globalflowhub.org</div>
     </div>
+    <div class="container" style="font-size:.78rem; margin-top:12px;">Privacy: When enabled, this site uses cookie-free <a href="https://developers.cloudflare.com/web-analytics/about/" rel="noopener noreferrer">Cloudflare Web Analytics</a> to understand aggregate traffic and page performance.</div>
   </footer>
+
+  <!-- The Cloudflare beacon does not load until a valid site token is configured. -->
+  <script>
+    (() => {
+      const config = document.querySelector('meta[name="gfh-cf-analytics-token"]');
+      const token = config ? config.getAttribute('content').trim() : '';
+      const formatOk = /^[0-9a-f]{32}$/i.test(token)
+        || /^[0-9a-f]{8}(?:-[0-9a-f]{4}){3}-[0-9a-f]{12}$/i.test(token);
+      if (!formatOk) return;
+      const beacon = document.createElement('script');
+      beacon.type = 'module';
+      beacon.src = 'https://static.cloudflareinsights.com/beacon.min.js';
+      beacon.setAttribute('data-cf-beacon', JSON.stringify({ token }));
+      document.body.appendChild(beacon);
+    })();
+  </script>
 </body>
 </html>
