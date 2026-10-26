@@ -156,6 +156,30 @@ def check_google_verification():
 
 check_page("index.html", ORIGIN + "/")
 check_page("privacy.html", ORIGIN + "/privacy.html")
+
+# GitHub Pages serves 404.html for unknown paths. The error page is
+# intentionally not canonicalized or included in search sitemaps.
+not_found = ROOT / "404.html"
+if not not_found.exists():
+    fail("Missing public custom 404.html")
+else:
+    text_404 = not_found.read_text(encoding="utf-8")
+    parser_404 = Page()
+    parser_404.feed(text_404)
+    if parser_404.h1_count != 1 or not parser_404.lang or not parser_404.viewport:
+        fail("404.html: requires one heading, page language and viewport")
+    if 'name="robots" content="noindex,nofollow"' not in text_404:
+        fail("404.html: should not be indexed")
+    if len(parser_404.scripts) != 1 or parser_404.scripts[0].get("src") != "https://static.cloudflareinsights.com/beacon.min.js":
+        fail("404.html: analytics beacon missing or duplicated")
+    for url in parser_404.links:
+        target = local_target(url)
+        if target is not None and not target.exists():
+            fail(f"404.html: broken local link {url}")
+    for ref in parser_404.aria_references:
+        if ref not in parser_404.ids:
+            fail(f"404.html: missing aria-labelledby target {ref}")
+
 check_sitemap()
 check_google_verification()
 
