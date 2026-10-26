@@ -139,6 +139,16 @@
     .cta .kicker { color: #a6e0da; }
     .cta h2 { margin-bottom: 10px; max-width: 680px; }
     .cta p { color: #c0d4e1; margin-bottom: 0; max-width: 710px; }
+    .cta .contact-intro { max-width: 750px; margin-bottom: 30px; }
+    .founder-name { display: flex; gap: 12px 20px; align-items: baseline; flex-wrap: wrap; padding-bottom: 26px; }
+    .founder-label { text-transform: uppercase; font-size: .74rem; font-weight: 700; letter-spacing: .09em; color: #b2e6df; }
+    .founder-name strong { color: #fff; font-size: 1.15rem; }
+    .contact-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+    .contact-card { padding: 23px 24px; border: 1px solid #506d84; border-radius: 12px; background: rgba(255,255,255,.045); min-width: 0; }
+    .contact-card-label { display: block; margin-bottom: 14px; color: #afded9; font-size: .76rem; font-weight: 750; text-transform: uppercase; letter-spacing: .1em; }
+    .contact-card a { color: white; font-size: clamp(.95rem, 1.7vw, 1.14rem); font-weight: 730; text-decoration-thickness: 1px; text-underline-offset: 4px; overflow-wrap: anywhere; }
+    .contact-card a:hover { color: #a7e7dd; }
+    .contact-card p { font-size: .86rem; margin-top: 12px; }
     .footer { padding: 32px 0; border-top: 1px solid var(--border); background: #fff; }
     .footer-row { display: flex; justify-content: space-between; align-items: center; gap: 22px; flex-wrap: wrap; }
     .footer strong { color: var(--navy); }
@@ -163,7 +173,7 @@
       .hero { padding-top: 72px; padding-bottom: 60px; }
       h1 { font-size: clamp(2.65rem, 11vw, 4rem); }
       .hero-lede { font-size: 1.03rem; }
-      .strip-inner, .labs-grid, .research-grid, .status-panel, .roadmap { grid-template-columns: 1fr; }
+      .strip-inner, .labs-grid, .research-grid, .status-panel, .roadmap, .contact-grid { grid-template-columns: 1fr; }
       .strip-item { padding: 16px 0; }
       .strip-item:not(:last-child) { border-right: 0; border-bottom: 1px solid #d3e2df; }
       .section { padding: 70px 0; }
@@ -354,13 +364,23 @@
     </section>
 
     <section class="cta" id="contact" aria-labelledby="contact-heading">
-      <div class="container cta-layout">
-        <div>
-          <p class="kicker">Dialogue &amp; thoughtful critique</p>
-          <h2 id="contact-heading">Good research welcomes difficult questions.</h2>
-          <p>Interested in the engineering ideas, research direction, or potential future collaboration? We welcome grounded discussion and critical feedback.</p>
+      <div class="container">
+        <p class="kicker">Connect with GlobalFlowHub</p>
+        <h2 id="contact-heading">Good research welcomes difficult questions.</h2>
+        <p class="contact-intro">For engineering discussion, research inquiries, and potential collaboration, you can reach GlobalFlowHub through either of the addresses below.</p>
+        <p class="founder-name"><span class="founder-label">Founder &amp; independent developer</span><strong>Thanh Ho</strong></p>
+        <div class="contact-grid" aria-label="Contact email addresses">
+          <div class="contact-card">
+            <span class="contact-card-label">General &amp; project inquiries</span>
+            <a href="mailto:hello@globalflowhub.org">hello@globalflowhub.org <span aria-hidden="true">↗</span></a>
+            <p>Primary address for GlobalFlowHub correspondence.</p>
+          </div>
+          <div class="contact-card">
+            <span class="contact-card-label">Direct contact</span>
+            <a href="mailto:thanhmho89@gmail.com">thanhmho89@gmail.com <span aria-hidden="true">↗</span></a>
+            <p>Direct correspondence with the founder.</p>
+          </div>
         </div>
-        <a class="btn btn-primary" href="mailto:hello@globalflowhub.org">Get in touch <span aria-hidden="true">&nbsp;↗</span></a>
       </div>
     </section>
   </main>
