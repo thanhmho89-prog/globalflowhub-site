@@ -60,9 +60,11 @@
     .nav-links .contact-link:hover { color: white; background: #204261; }
     .mobile-nav { display: none; }
     .hero { position: relative; overflow: hidden; background: var(--navy); color: #fff; padding: clamp(80px, 9vw, 132px) 0 88px; }
+    .hero a:focus-visible, .cta a:focus-visible { outline-color: #a7e7dd; }
     .hero::before { content: ""; position: absolute; inset: 0; opacity: .16; pointer-events: none; background-image: linear-gradient(rgba(255,255,255,.19) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.19) 1px, transparent 1px); background-size: 74px 74px; mask-image: linear-gradient(90deg, transparent 5%, #000 100%); }
     .hero::after { content: ""; position: absolute; top: -340px; right: -320px; width: 830px; aspect-ratio: 1; background: radial-gradient(circle, rgba(27,152,155,.28), transparent 65%); pointer-events: none; }
     .hero-grid { position: relative; z-index: 1; display: grid; grid-template-columns: 1.12fr .88fr; gap: clamp(40px, 6vw, 90px); align-items: center; }
+    .hero-grid > * { min-width: 0; }
     .hero .kicker { color: #a1dddb; }
     h1 { max-width: 680px; margin-bottom: 24px; font-size: clamp(3rem, 5.9vw, 5.25rem); font-weight: 730; }
     h1 em { font-style: normal; color: #9be0d9; }
@@ -141,7 +143,7 @@
     .roadmap-card .phase { font-size: .76rem; color: var(--teal-strong); letter-spacing: .1em; text-transform: uppercase; font-weight: 760; }
     .roadmap-card h3 { margin-top: 24px; margin-bottom: 12px; }
     .roadmap-card p { color: var(--muted); font-size: .92rem; margin: 0; }
-    .cta { background: #102a42; color: #fff; padding: clamp(65px, 7vw, 95px) 0; }
+    .cta { background: #102a42; color: #fff; padding: clamp(65px, 7vw, 95px) 0; scroll-margin-top: 90px; }
     .cta-layout { display: flex; justify-content: space-between; align-items: center; gap: 35px; }
     .cta .kicker { color: #a6e0da; }
     .cta h2 { margin-bottom: 10px; max-width: 680px; }
@@ -175,11 +177,13 @@
       .header-inner { min-height: 68px; gap: 12px; }
       .header-inner > .nav-links { display: none; }
       .mobile-nav { display: block; position: relative; }
-      .mobile-nav summary { cursor: pointer; color: var(--navy); padding: 8px 11px; border: 1px solid #cbd8dd; border-radius: 8px; font-size: .88rem; font-weight: 720; list-style: none; }
+      .mobile-nav summary { display: flex; align-items: center; justify-content: center; min-height: 44px; cursor: pointer; color: var(--navy); padding: 8px 13px; border: 1px solid #cbd8dd; border-radius: 8px; font-size: .88rem; font-weight: 720; list-style: none; }
       .mobile-nav summary::-webkit-details-marker { display: none; }
       .mobile-nav[open] .nav-links { position: absolute; right: 0; top: calc(100% + 10px); display: flex; flex-direction: column; align-items: stretch; width: min(280px, calc(100vw - 32px)); gap: 0; padding: 10px; background: white; box-shadow: 0 18px 55px rgba(0,0,0,.14); border: 1px solid var(--border); border-radius: 12px; }
-      .mobile-nav .nav-links a { padding: 11px 13px; }
+      .mobile-nav .nav-links a { display: flex; align-items: center; min-height: 44px; padding: 11px 13px; }
       .hero { padding-top: 72px; padding-bottom: 60px; }
+      .hero .kicker { overflow-wrap: anywhere; }
+      .system-top { flex-wrap: wrap; gap: 10px; }
       h1 { font-size: clamp(2.65rem, 11vw, 4rem); }
       .hero-lede { font-size: 1.03rem; }
       .strip-inner, .labs-grid, .research-grid, .status-panel, .roadmap, .contact-grid { grid-template-columns: 1fr; }
@@ -196,6 +200,8 @@
       .evidence-row strong { padding: 13px 16px; }
       .evidence-row span { padding: 13px 16px; }
       .system-card { padding: 20px; }
+      .contact-card { padding: 20px; }
+      .wordmark { font-size: 1.05rem; }
       .diagram-node { align-items: flex-start; flex-direction: column; gap: 3px; }
       .diagram-node small { text-align: left; }
     }
