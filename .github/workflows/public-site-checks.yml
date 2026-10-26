@@ -18,3 +18,5 @@ jobs:
         uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
       - name: Validate local pages, navigation, sitemap and search verification
         run: python3 scripts/check_site.py
+      - name: Check page weight and public asset budgets
+        run: python3 scripts/check_performance_budget.py
