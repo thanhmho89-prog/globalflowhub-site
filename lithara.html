@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0b1d31">
+  <link rel="canonical" href="https://globalflowhub.org/lithara.html">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <meta name="description" content="GFH and LITHARA: systems-engineering development, governed AI experimentation, evidence standards, and the limits of current verification.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="GFH / LITHARA — Research Profile">
+  <meta property="og:description" content="What the GlobalFlowHub and LITHARA research tracks investigate, what exists, and what has not been proven.">
+  <meta property="og:url" content="https://globalflowhub.org/lithara.html">
+  <meta property="og:image" content="https://globalflowhub.org/social-preview.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://globalflowhub.org/social-preview.png">
+  <title>GFH / LITHARA — Research Profile | GlobalFlowHub</title>
+  <style>
+    :root{color-scheme:light;--navy:#0b1d31;--ink:#17283a;--muted:#586779;--teal:#087b7a;--pale:#e6f4f1;--canvas:#f5f7f8;--border:#dfe6e9}
+    *,*::before,*::after{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;background:#fff;color:var(--ink);font:16px/1.7 system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+    a{color:#005d61;text-underline-offset:3px}
+    a:focus-visible{outline:3px solid var(--teal);outline-offset:4px;border-radius:3px}
+    .container{width:min(calc(100% - 44px),1080px);margin-inline:auto}
+    .skip{position:absolute;top:-90px;left:12px;z-index:10;background:#fff;padding:10px 14px}
+    .skip:focus{top:10px}
+    .header{border-bottom:1px solid var(--border);background:#fff}
+    .header-row{min-height:82px;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px 22px;padding-block:12px}
+    .brand{display:inline-flex;align-items:center;gap:12px;text-decoration:none;color:var(--navy);font-weight:800;font-size:1.13rem;letter-spacing:-.04em}
+    .mark{display:grid;place-items:center;background:var(--navy);color:#fff;width:40px;height:40px;border-radius:10px;font-size:.76rem}
+    .nav{display:flex;gap:18px;flex-wrap:wrap}
+    .nav a{color:#465769;text-decoration:none;font-weight:650;font-size:.87rem}
+    .hero{background:var(--navy);color:#fff;padding:clamp(70px,9vw,108px) 0 72px}
+    .eyebrow,.kicker{margin:0 0 17px;text-transform:uppercase;font-weight:800;letter-spacing:.16em;font-size:.73rem}
+    .eyebrow{color:#a7e7dd}.kicker{color:#005d61}
+    h1,h2,h3{line-height:1.16;letter-spacing:-.035em}
+    h1{max-width:830px;font-size:clamp(2.65rem,6vw,5rem);margin:0 0 22px}
+    h1 em{font-style:normal;color:#a7e7dd}
+    .lede{max-width:780px;color:#c7d5e3;font-size:clamp(1.08rem,2vw,1.25rem);margin:0 0 25px}
+    .fine{max-width:760px;color:#b7c9db;font-size:.83rem;margin:0}
+    .strip{background:#f3f8f7;border-bottom:1px solid #d3e2df}
+    .strip-grid{display:grid;grid-template-columns:repeat(3,1fr)}
+    .strip-cell{padding:22px 20px}.strip-cell:first-child{padding-left:0}.strip-cell:not(:last-child){border-right:1px solid #d3e2df}
+    .strip-cell strong{display:block;color:var(--navy);font-size:.87rem}
+    .strip-cell span{display:block;color:#55706d;font-size:.83rem}
+    .section{padding:clamp(64px,8vw,94px) 0;scroll-margin-top:18px}
+    .soft{background:var(--canvas)}
+    .heading{max-width:790px;margin-bottom:30px}
+    h2{color:var(--navy);font-size:clamp(1.95rem,4vw,3rem);margin:0 0 15px}
+    .heading p:last-child{margin:0;color:var(--muted)}
+    .cards{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+    .card{border:1px solid var(--border);border-radius:16px;padding:28px;background:#fff}
+    .card .name{font-size:.74rem;font-weight:800;letter-spacing:.1em;color:#005d61;text-transform:uppercase}
+    .card h3{font-size:1.35rem;color:var(--navy);margin:16px 0 11px}
+    .card p{margin:0 0 13px;color:var(--muted)}
+    .card ul{padding-left:20px;margin:0}.card li+li{margin-top:7px}
+    .table-wrap{border:1px solid var(--border);border-radius:14px;overflow-x:auto;background:#fff}
+    table{border-collapse:collapse;width:100%;min-width:630px;text-align:left}
+    caption{text-align:left;color:var(--muted);font-size:.88rem;padding:16px 19px}
+    th,td{padding:17px 19px;border-bottom:1px solid var(--border);vertical-align:top}
+    tr:last-child th,tr:last-child td{border-bottom:0}
+    thead th{background:var(--pale);color:var(--navy);font-size:.84rem}
+    tbody th{color:var(--navy);font-size:.92rem}
+    td{color:#4d5c6b;font-size:.91rem}
+    .notice{border-left:4px solid var(--teal);background:var(--pale);padding:19px 23px;margin-top:25px;border-radius:0 9px 9px 0}
+    .notice p{margin:0}
+    .illustration{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+    .illustration h3{color:var(--navy);margin:0 0 13px}
+    .illustration ol{padding-left:20px;margin:0}.illustration li+li{margin-top:11px}
+    .limits{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .limits .card{padding:23px}.limits h3{font-size:1.12rem}
+    .contact{background:var(--navy);color:#fff;padding:65px 0}
+    .contact h2{color:#fff}.contact p{max-width:750px;color:#c7d5e3}.contact a{color:#a7e7dd}
+    footer{border-top:1px solid var(--border);padding:27px 0;color:var(--muted);font-size:.86rem}
+    .footer-row{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
+    @media(max-width:800px){.strip-grid,.cards,.illustration,.limits{grid-template-columns:1fr}.strip-cell{padding:16px 0}.strip-cell:not(:last-child){border-right:0;border-bottom:1px solid #d3e2df}}
+    @media(max-width:520px){.container{width:min(calc(100% - 32px),1080px)}.nav{gap:8px 15px}.nav a{display:inline-flex;align-items:center;min-height:36px}.card{padding:23px}}
+    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+  </style>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <header class="header"><div class="container header-row">
+    <a class="brand" href="/" aria-label="GlobalFlowHub homepage"><span class="mark" aria-hidden="true">GFH</span><span>GlobalFlowHub</span></a>
+    <nav class="nav" aria-label="Page navigation"><a href="#tracks">Initiatives</a><a href="#evidence">Evidence</a><a href="#example">Research example</a><a href="#limits">Limits</a><a href="/">Home</a></nav>
+  </div></header>
+  <main id="main">
+    <section class="hero" aria-labelledby="page-title"><div class="container">
+      <p class="eyebrow">Independent engineering · Experimental AI research</p>
+      <h1 id="page-title">GlobalFlowHub <em>/</em> LITHARA</h1>
+      <p class="lede">Two connected research tracks examining how humans, software, and AI can coordinate through accurate capabilities, explicit permissions, observable outcomes, and independent checks.</p>
+      <p class="fine">Public research profile · November 2026 · This is not an operational product announcement or security certification.</p>
+    </div></section>
+    <div class="strip" aria-label="Current status"><div class="container strip-grid">
+      <div class="strip-cell"><strong>Backend development</strong><span>Private source and architecture review</span></div>
+      <div class="strip-cell"><strong>Verification research</strong><span>Bounded synthetic testing and open questions</span></div>
+      <div class="strip-cell"><strong>Operational authority</strong><span>No autonomous production authority claimed</span></div>
+    </div></div>
+    <section class="section" id="tracks" aria-labelledby="tracks-title"><div class="container">
+      <div class="heading"><p class="kicker">01 / Research tracks</p><h2 id="tracks-title">Connected questions. Distinct scopes.</h2><p>GlobalFlowHub focuses on structured software systems. LITHARA explores how AI-assisted actions can be constrained, observed, and evaluated without confusing model output with operational truth.</p></div>
+      <div class="cards">
+        <article class="card"><span class="name">GlobalFlowHub / GFH</span><h3>Systems engineering</h3><p>Private Python development includes API, policy, routing, review, and audit-related components. Their presence does not itself establish an end-to-end production service.</p><ul><li>Structured evaluation and workflow coordination</li><li>Human review and transparent decision state</li><li>Accurate tool capabilities and traceable handoffs</li></ul></article>
+        <article class="card"><span class="name">LITHARA / Experimental research</span><h3>Governed AI investigation</h3><p>Restricted work examines authorization boundaries, agent behavior, evidence continuity, operating-system conditions, and the limitations of synthetic experiments.</p><ul><li>Identity and capability are not permission</li><li>Bounded tests with explicit stopping conditions</li><li>Independent critique before broader claims</li></ul></article>
+      </div>
+    </div></section>
+    <section class="section soft" id="evidence" aria-labelledby="evidence-title"><div class="container">
+      <div class="heading"><p class="kicker">02 / Evidence and status</p><h2 id="evidence-title">What exists—and what it does not prove.</h2><p>Public visitors can read this status description. The private project materials and full experimental records are not generally released or independently reproducible from this page.</p></div>
+      <div class="table-wrap"><table>
+        <caption>Public status snapshot · November 2026. Not an independent attestation.</caption>
+        <thead><tr><th scope="col">Area</th><th scope="col">Known work</th><th scope="col">Boundary of the claim</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">Design</th><td>Architecture, policy-governance concepts, and trust-boundary contracts.</td><td>Written design does not prove runtime enforcement.</td></tr>
+          <tr><th scope="row">Implementation</th><td>Private backend source contains Python API, governance, review, and audit-related components.</td><td>Not a public reproducible backend release or verified complete integration.</td></tr>
+          <tr><th scope="row">Testing</th><td>Restricted, synthetic exercises and engineering review findings have been recorded.</td><td>Full test artifacts and reproducibility evidence are not published here; outcomes remain bounded.</td></tr>
+          <tr><th scope="row">Independent checks</th><td>Separating a reported result from independently checked evidence is a core requirement.</td><td>No comprehensive third-party certification or end-to-end security proof is claimed.</td></tr>
+          <tr><th scope="row">Operations</th><td>Research and prototyping continue under review.</td><td>No public autonomous execution service or production authority is represented.</td></tr>
+        </tbody>
+      </table></div>
+      <div class="notice"><p><strong>Disclosure boundary:</strong> This page does not publish credentials, private host details, confidential source code, or unreleased evidence bundles. A carefully scoped technical review may be discussed separately.</p></div>
+    </div></section>
+    <section class="section" id="example" aria-labelledby="example-title"><div class="container">
+      <div class="heading"><p class="kicker">03 / Illustrative research case</p><h2 id="example-title">An AI says it changed a file. How would we know?</h2><p>A model's confident report is not the same as permission to execute or evidence that the expected file state changed.</p></div>
+      <div class="illustration">
+        <article class="card"><h3>Candidate verification chain</h3><ol><li>Identify the actor and exact proposed action.</li><li>Check permissions, target, and current conditions.</li><li>Observe the actual outcome of the trusted execution boundary.</li><li>Independently inspect the relevant file state and evidence.</li><li>Record the result, uncertainty, and any needed stopping condition.</li></ol></article>
+        <article class="card"><h3>What the evidence would mean</h3><p><strong>AI response:</strong> A claim that the action succeeded.</p><p><strong>Tool response:</strong> Evidence about an invoked interface, not necessarily the intended real-world outcome.</p><p><strong>Independent observation:</strong> A separate check of relevant actual state against predefined criteria.</p><p><strong>Current classification:</strong> This is an illustrative test design, not a published executed experiment or passing result.</p></article>
+      </div>
+    </div></section>
+    <section class="section soft" id="limits" aria-labelledby="limits-title"><div class="container">
+      <div class="heading"><p class="kicker">04 / Limits and interpretation</p><h2 id="limits-title">More capability does not automatically mean more authority.</h2><p>Every stronger claim requires stronger evidence. A previous successful test does not create new operational permission.</p></div>
+      <div class="limits">
+        <article class="card"><h3>Proposed is not implemented</h3><p>An architecture diagram or AI-generated blueprint is not evidence of working code.</p></article>
+        <article class="card"><h3>Tested is not universally verified</h3><p>Test outcomes are limited by the tested environment, versions, assumptions, and observations.</p></article>
+        <article class="card"><h3>Verified is not authorized</h3><p>Independent evidence does not grant standing permission to run tools or change external systems.</p></article>
+      </div>
+    </div></section>
+    <section class="contact" id="contact" aria-labelledby="contact-title"><div class="container">
+      <p class="eyebrow">Questions and technical review</p><h2 id="contact-title">Research welcomes careful questions.</h2>
+      <p>For appropriately scoped technical questions, write to <a href="mailto:hello@globalflowhub.org">hello@globalflowhub.org</a>. Please do not send credentials or other sensitive records through ordinary email.</p>
+      <p>The <a href="https://github.com/thanhmho89-prog/globalflowhub-site" rel="noopener noreferrer">public website repository</a> contains this website's source, not the restricted GFH/LITHARA research backend.</p>
+    </div></section>
+  </main>
+  <footer><div class="container footer-row"><span>GFH / LITHARA · Independent research · November 2026</span><span><a href="/">Home</a> · <a href="/privacy.html">Privacy notice</a> · <a href="#main">Back to top</a></span></div></footer>
+  <!-- Cloudflare Web Analytics -->
+  <script type="module" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token":"4eb53dafc5b046e7aa81c7efdd20b241"}'></script>
+  <!-- End Cloudflare Web Analytics -->
+</body>
+</html>
