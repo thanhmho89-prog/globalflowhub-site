@@ -138,7 +138,7 @@ def check_sitemap():
     except ET.ParseError as e:
         fail(f"Malformed sitemap XML: {e}")
         return
-    expected = {ORIGIN + "/", ORIGIN + "/privacy.html"}
+    expected = {ORIGIN + "/", ORIGIN + "/privacy.html", ORIGIN + "/lithara.html"}
     if set(locations) != expected or len(locations) != len(expected):
         fail(f"Unexpected sitemap entries: {locations}")
     if not (ROOT / "robots.txt").exists() or "Sitemap: " + ORIGIN + "/sitemap.xml" not in (ROOT / "robots.txt").read_text():
@@ -156,6 +156,7 @@ def check_google_verification():
 
 check_page("index.html", ORIGIN + "/")
 check_page("privacy.html", ORIGIN + "/privacy.html")
+check_page("lithara.html", ORIGIN + "/lithara.html")
 
 # GitHub Pages serves 404.html for unknown paths. The error page is
 # intentionally not canonicalized or included in search sitemaps.
@@ -189,5 +190,5 @@ if ERRORS:
     print(f"{len(ERRORS)} static-site issue(s) found.")
     sys.exit(1)
 
-print("PASS: two pages, internal anchors, local files, sitemap, verification file and analytics configuration.")
+print("PASS: three pages, internal anchors, local files, sitemap, verification file and analytics configuration.")
 print("Note: browser rendering, network behavior, privacy practices, and search indexing are not tested.")

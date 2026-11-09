@@ -17,6 +17,7 @@ ERRORS = []
 PAGE_LIMITS = {
     "index.html": 56 * 1024,
     "privacy.html": 16 * 1024,
+    "lithara.html": 32 * 1024,
     "404.html": 16 * 1024,
 }
 CSS_LIMIT = 25 * 1024
